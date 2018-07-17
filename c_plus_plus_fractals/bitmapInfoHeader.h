@@ -11,7 +11,6 @@ struct BitmapInfoHeader {
 	int16_t bitsPerPixel{ 24 };
 	int32_t compression{ 0 };
 	int32_t dataSize{ 0 };
-	int32_t dataSize{ 0 };
 	int32_t horizontalResolution{ 2400 };
 	int32_t verticalResolution{ 2400 };
 	int32_t colors{ 0 };
