@@ -54,10 +54,6 @@ void FractalCreator::calcualteRangeTotals() {
 
 
 void FractalCreator::drawFractal() {
-	RGB startColor(0, 0, 0);
-	RGB endColor(0, 0, 255);
-	RGB colorDiff = endColor - startColor;
-
 	for (int y = 0; y < m_height; y++) {
 		for (int x = 0; x < m_width; x++) {
 
@@ -76,11 +72,9 @@ void FractalCreator::drawFractal() {
 
 			if (iterations != Mandelbrot::MAX_ITERATIONS) {
 				int totalPixels = 0;
-				double hue = 0.0;
 				for (int i = rangeStart; i <= iterations; i++) {
 					totalPixels += m_histogram[i];
 				}
-				
 				red = startColor.r + colorDiff.r * (double)totalPixels / rangeTotal;
 				green = startColor.g + colorDiff.g * (double)totalPixels / rangeTotal;
 				blue = startColor.b + colorDiff.b * (double)totalPixels / rangeTotal;
