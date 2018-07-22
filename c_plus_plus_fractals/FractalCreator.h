@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <cstdint>
+#include <assert.h>
+#include <iostream>
 #include <memory>
 #include <math.h>
 #include <vector>
@@ -22,12 +24,15 @@ private:
 	int m_total{ 0 };
 	std::vector<int> m_ranges;
 	std::vector<RGB> m_colors;
-	std::vector<int> m_rangeTotal;
+	std::vector<int> m_rangeTotals;
+	bool m_bGotFirstRange{ false };
 
 	void calculateIteration();
 	void calculateTotalIterations();
+	void calcualteRangeTotals();
 	void drawFractal();
 	void writeBitmap(std::string name);
+	int getRange(int iterations) const;
 
 public:
 	FractalCreator(int width, int height);

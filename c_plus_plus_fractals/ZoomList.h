@@ -17,6 +17,5 @@ public:
 	ZoomList(int width, int height);
 
 	void add(const Zoom& zoom);
-
 	std::pair<double, double> doZoom(int x, int y);
 };
